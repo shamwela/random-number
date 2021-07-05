@@ -1,0 +1,67 @@
+$dominant-color: #000000
+$secondary-color: #fafafa
+$accent-color: #0000ff
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  font-family: Arial, sans-serif
+  color: $secondary-color
+
+*::selection
+  background-color: $accent-color
+  color: $secondary-color
+
+body
+  line-height: 1.5
+
+h1,
+h2,
+h3
+  line-height: 1.1
+  font-weight: bold
+
+p
+  max-width: 60ch
+
+strong
+  background-color: $accent-color
+  width: max-content
+
+a,
+button
+  outline: 0
+  width: max-content
+  transition: all 0.5s
+
+a:hover,
+a:focus,
+button:hover,
+button:focus
+  background-color: $accent-color
+  text-decoration: none
+  color: inherit
+
+a
+  text-underline-offset: 0.1875em
+
+button
+  border: 0
+  padding: 1rem
+  background-color: $secondary-color
+  font-size: inherit
+  color: $dominant-color
+  cursor: pointer
+
+button::after
+  content: ' >' // this might look confusing if 2 or more buttons are side by side
+
+input
+  border: 0
+  padding: 1rem
+  max-width: 60ch
+  color: $dominant-color
+
+input:focus
+  outline: 5px solid $accent-color
