@@ -1,60 +1,68 @@
 import React, { Component } from 'react'
+import './App.sass'
+
 class App extends Component {
   state = {
-    result: null,
     min: 1,
     max: 10,
   }
 
-  componentDidMount() {
-    this.handleSubmit()
+  componentDidMount = () => {
+    this.generate()
   }
 
   handleChange = ({ currentTarget }) => {
     const { name, value } = currentTarget
-    this.setState({ [name]: value })
+    const valueInInteger = parseInt(value)
+
+    this.setState({ [name]: valueInInteger })
   }
 
-  handleSubmit = () => {
-    const { min, max } = this.state
-    const result = Math.floor(Math.random() * (max - min + 1) + min)
-    this.setState({ result })
+  generate = () => {
+    let { min, max } = this.state
+
+    if (min > max) [min, max] = [max, min]
+    const result = Math.floor(Math.random() * (max - min + 1)) + min
+
+    this.setState({ result, min, max })
   }
 
   render() {
-    const { handleSubmit, handleChange } = this
+    const { generate, handleChange } = this
     const { result, min, max } = this.state
 
     return (
-      <div id='app'>
-        <h1>Random Number</h1>
-        <form onSubmit={(event) => handleSubmit(event.preventDefault)}>
-          <h2>Result: {result}</h2>
-
-          <label htmlFor='min'></label>
-          <input
-            value={min}
-            onChange={handleChange}
-            name='min'
-            id='min'
-            type='number'
-            min='1'
-            max='1000'
-          ></input>
-
-          <label htmlFor='max'></label>
-          <input
-            value={max}
-            onChange={handleChange}
-            name='max'
-            id='max'
-            type='number'
-            min='1'
-            max='1000'
-          ></input>
-
-          <button type='submit'>Generate</button>
-        </form>
+      <div id='container'>
+        <div id='app'>
+          <h1 id='title'>Random Number</h1>
+          <form
+            onSubmit={(event) => generate(event.preventDefault())}
+            id='form'
+          >
+            <h2 id='result'>{result}</h2>
+            <div className='input-group'>
+              <label htmlFor='min'>Min</label>
+              <input
+                value={min}
+                onChange={handleChange}
+                name='min'
+                id='min'
+                type='number'
+              ></input>
+            </div>
+            <div className='input-group'>
+              <label htmlFor='max'>Max</label>
+              <input
+                value={max}
+                onChange={handleChange}
+                name='max'
+                id='max'
+                type='number'
+              ></input>
+            </div>
+            <button type='submit'>Generate</button>
+          </form>
+        </div>
       </div>
     )
   }
