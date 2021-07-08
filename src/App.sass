@@ -10,15 +10,19 @@
   min-height: 50vh
 
 #title
-  margin-bottom: 5vh
+  margin-bottom: 5vh // this should be the same as form's row gap to look nice
+  font-size: 3rem
 
 #form
   display: grid
-  grid-gap: 5vh
+  row-gap: 5vh
+
+#result
+  font-size: 2rem
 
 .input-group
-  display: flex
-  flex-direction: column
+  display: grid
+  row-gap: 1vh
 
 @media only screen and (min-width: 1025px) // for big landscape tablets, laptops, and desktops
   #app

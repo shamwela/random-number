@@ -39,7 +39,7 @@ class App extends Component {
             onSubmit={(event) => generate(event.preventDefault())}
             id='form'
           >
-            <h2 id='result'>{result}</h2>
+            <span id='result'>Result: {result}</span>
             <div className='input-group'>
               <label htmlFor='min'>Min</label>
               <input
