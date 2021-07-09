@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import InputGroup from './components/InputGroup'
 import './App.sass'
 
 class App extends Component {
@@ -40,26 +41,8 @@ class App extends Component {
             id='form'
           >
             <span id='result'>Result: {result}</span>
-            <div className='input-group'>
-              <label htmlFor='min'>Min</label>
-              <input
-                value={min}
-                onChange={handleChange}
-                name='min'
-                id='min'
-                type='number'
-              ></input>
-            </div>
-            <div className='input-group'>
-              <label htmlFor='max'>Max</label>
-              <input
-                value={max}
-                onChange={handleChange}
-                name='max'
-                id='max'
-                type='number'
-              ></input>
-            </div>
+            <InputGroup value={min} onChange={handleChange} name='min' />
+            <InputGroup value={max} onChange={handleChange} name='max' />
             <button type='submit'>Generate</button>
           </form>
         </div>
