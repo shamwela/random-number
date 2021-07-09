@@ -11,10 +11,6 @@ $accent-color: #3EA6FF
   font-family: 'Titillium Web', Arial, sans-serif
   color: $secondary-color
 
-*::selection
-  background-color: $accent-color
-  color: $secondary-color
-
 body
   background-color: $dominant-color
   line-height: 1.5
@@ -25,30 +21,21 @@ h3
   line-height: 1.1
   font-weight: bold
 
-button
-  outline: 0
-  width: max-content
-  transition: all 0.5s
-
-button:hover,
-button:focus
-  background-color: $accent-color
-  text-decoration: none
-  color: inherit
-
-button
-  border: 0
+input, button
   padding: 1rem
-  background-color: $secondary-color
   font-size: inherit
-  color: $dominant-color
-  cursor: pointer
 
 input
   border: 0
-  padding: 1rem
-  font-size: inherit
   color: $dominant-color
 
 input:focus
-  outline: 5px solid $accent-color
+  outline: 4px solid $accent-color
+
+button
+  outline: 0
+  border: 0
+  background-color: $accent-color
+  font-weight: bold
+  color: $dominant-color
+  cursor: pointer
