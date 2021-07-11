@@ -1,10 +1,10 @@
 import React from 'react'
 import './InputGroup.sass'
 
-function InputGroup({ value, onChange, name }) {
+function InputGroup({ value, onChange, name, label }) {
   return (
     <div className='input-group'>
-      <label htmlFor={name}>{name}</label>
+      <label htmlFor={name}>{label}</label>
       <input
         value={value}
         onChange={onChange}

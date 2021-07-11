@@ -41,8 +41,8 @@ class App extends Component {
             id='form'
           >
             <span id='result'>Result: {result}</span>
-            <InputGroup value={min} onChange={handleChange} name='min' />
-            <InputGroup value={max} onChange={handleChange} name='max' />
+            <InputGroup value={min} onChange={handleChange} name='min' label='Min' />
+            <InputGroup value={max} onChange={handleChange} name='max' label='Max' />
             <button type='submit'>Generate</button>
           </form>
         </div>
