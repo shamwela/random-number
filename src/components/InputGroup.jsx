@@ -4,7 +4,7 @@ import './InputGroup.sass'
 function InputGroup({ value, onChange, name }) {
   return (
     <div className='input-group'>
-      <label htmlFor={name}>Min</label>
+      <label htmlFor={name}>{name}</label>
       <input
         value={value}
         onChange={onChange}
